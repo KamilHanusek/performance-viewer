@@ -21,7 +21,7 @@ class PerformanceCounter(
                     timeInMillis = spentTime
                 )
             }
-            JobForCountWithTime(job.name, timesByCount)
+            JobForCountWithTime(job.id, timesByCount)
         }
     }
 

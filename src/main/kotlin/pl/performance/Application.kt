@@ -60,9 +60,9 @@ fun main(value: Array<String>) {
     val charts = (1..4).map {
         val performanceResult = PerformanceCounter().count(
             jobToPerform2,
-            jobToPerform2.copy(name = jobToPerform2.name + 2),
-            jobToPerform2.copy(name = jobToPerform2.name + 3),
-            jobToPerform2.copy(name = jobToPerform2.name + 4)
+            jobToPerform2.copy(id = jobToPerform2.id + 2),
+            jobToPerform2.copy(id = jobToPerform2.id + 3),
+            jobToPerform2.copy(id = jobToPerform2.id + 4)
         )
         val chart = XYChart(XYChartBuilder().also {
             it.xAxisTitle("Ilość wykonań")
