@@ -32,8 +32,8 @@ object PerformanceViewer {
     }
 
     fun performAndDisplayOnSeparateChart(vararg separatedJob: SeparatedJob) {
-        val chartsToShow = separatedJob.map { (xAxisName, job) ->
-            val performanceResult = performanceCounter.count(job)
+        val chartsToShow = separatedJob.map { (xAxisName, jobs) ->
+            val performanceResult = performanceCounter.count(*jobs.toTypedArray())
             val chart = createDefaultChart(xAxisName)
 
             performanceResult.forEach { resultJob ->
