@@ -4,9 +4,8 @@ import org.knowm.xchart.SwingWrapper
 import org.knowm.xchart.XYChart
 import org.knowm.xchart.XYChartBuilder
 
-class PerformanceViewer(
-        private val performanceCounter: PerformanceCounter = PerformanceCounter()
-) {
+class PerformanceViewer {
+    private val performanceCounter: PerformanceCounter = PerformanceCounter()
 
     fun performAndDisplay(vararg jobToPerform: PerformJob) {
         val performanceResult = performanceCounter.count(*jobToPerform)
