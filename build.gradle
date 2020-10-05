@@ -1,0 +1,26 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.0'
+    id "com.github.ben-manes.versions" version '0.33.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'org.knowm.xchart:xchart:3.6.5'
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
+    testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.23'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
