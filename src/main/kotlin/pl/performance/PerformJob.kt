@@ -1,16 +1,12 @@
 package pl.performance
 
-data class PerformJob private constructor(
+data class PerformJob (
         val id: String,
-        val xAxisName: String?,
-        val performance: () -> Unit
+        val tasks: Collection<Task>
 ) {
-    constructor(
-            name: String,
-            performance: () -> Unit
-    ) : this(name, null, performance)
 
-    init {
-
-    }
+    data class Task(
+            val xAxisValues: Number,
+            val performance: () -> Unit
+    )
 }
