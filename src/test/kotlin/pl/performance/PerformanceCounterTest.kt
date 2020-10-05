@@ -16,14 +16,14 @@ internal class PerformanceCounterTest {
         val data = DataCreator.create(100) {
             Random.nextInt()
         }
-        val jobToPerform = PerformJob("something 1", xAxisName = "finding element in list", tasks = listOf(
+        val jobToPerform = PerformJob("something 1", tasks = listOf(
                 PerformJob.Task(xAxisValues = 3) {
                     val randomInt = Random.nextInt()
                     data.firstOrNull { randomInt == it }
                 }
         ))
         val hashMap = hashMapOf(*data.map { it to it }.toTypedArray())
-        val jobToPerform2 = PerformJob("something 2", xAxisName = "finding element in hashMap", tasks = listOf(
+        val jobToPerform2 = PerformJob("something 2", tasks = listOf(
                 PerformJob.Task(4){
                     val randomInt = Random.nextInt()
                     hashMap.get(randomInt)
