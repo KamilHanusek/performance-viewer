@@ -1,6 +1,6 @@
 package pl.performance
 
-data class PerformJob (
+data class PerformJob(
         val id: String,
         val tasks: Collection<Task>
 ) {
