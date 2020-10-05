@@ -2,16 +2,16 @@ package pl.performance
 
 import kotlin.system.measureTimeMillis
 
-class PerformanceCounter(
+internal class PerformanceCounter(
     private val TEST_COUNTS: Set<Int> = DEFAULT_TEST_SET
 ) {
     companion object {
-        val DEFAULT_TEST_SET =
+        internal val DEFAULT_TEST_SET =
             setOf(1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100_000)
-        val DEFAULT_TEST_SET_SIZE = DEFAULT_TEST_SET.size
+        internal val DEFAULT_TEST_SET_SIZE = DEFAULT_TEST_SET.size
     }
 
-    fun count(vararg jobToPerform: PerformJob): List<JobForCountWithTime> {
+    internal fun count(vararg jobToPerform: PerformJob): List<JobForCountWithTime> {
         return jobToPerform.map { job ->
             System.gc()
             val timesByCount = TEST_COUNTS.map { count ->
@@ -25,12 +25,12 @@ class PerformanceCounter(
         }
     }
 
-    data class JobForCountWithTime(
+    internal data class JobForCountWithTime(
         val jobName: String,
         val testCountsWithTimeTime: List<CountTime>,
     ) {
 
-        data class CountTime(
+        internal data class CountTime(
             val timeInMillis: Long,
             val count: Int
         )
